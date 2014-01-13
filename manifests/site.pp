@@ -74,12 +74,42 @@ node default {
   include ruby::1_9_3
   include ruby::2_0_0
 
+  # extra modules
+  include firefox
+  include gimp
+  include heroku
+  include imagemagick
+  include java
+  include memcached
+  include mongodb
+  include mysql
+
+  #mysql::db { 'mydb':  }
+
+  include openssl
+  include redis
+  include wget  
+  include zsh
+  include skype
+  include wkhtmltopdf
+  include qt
+  include rubymine
+  include vagrant
+  include virtualbox  
+  include ohmyzsh
+  include sublime_text_2
+  sublime_text_2::package { 'Emmet':
+    source => 'sergeche/emmet-sublime'
+  }  
+
   # common, useful packages
   package {
     [
       'ack',
       'findutils',
-      'gnu-tar'
+      'gnu-tar',
+      'libxml2', 
+      'libxslt'
     ]:
   }
 
